@@ -38,23 +38,22 @@
 5 - OkHttp
 </br>
 
+### PHP API FILES
+
+you will find all needed php api files on this repo https://github.com/Ahmed199810/POS-API
+
 ### Images
 </br>
 
 <p align="center">
   <img src="screens/cafe pro ads.png" width="500" title="hover text">
   </br>
-    <img src="screens/cafe1.png" width="500" title="hover text">
-  </br>
-      <img src="screens/cafe2.png" width="500" title="hover text">
-  </br>
-      <img src="screens/cafe3.png" width="500" title="hover text">
-  </br>
-      <img src="screens/cafe4.png" width="500" title="hover text">
-  </br>
-      <img src="screens/cafe5.png" width="500" title="hover text">
-  </br>
-      <img src="screens/cafe6.png" width="500" title="hover text">
+      <img src="screens/cafe1.png" width="300" title="hover text">
+      <img src="screens/cafe2.png" width="300" title="hover text">
+      <img src="screens/cafe3.png" width="300" title="hover text">
+      <img src="screens/cafe4.png" width="300" title="hover text">
+      <img src="screens/cafe5.png" width="300" title="hover text">
+      <img src="screens/cafe6.png" width="300" title="hover text">
   </br>
   
 </p>
