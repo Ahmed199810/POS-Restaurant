@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="523.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UsersController">
+
+    <right>
+        <ToolBar nodeOrientation="RIGHT_TO_LEFT" orientation="VERTICAL" style="-fx-background-color: #52d97f;" BorderPane.alignment="CENTER">
+            <items>
+                <Button fx:id="btn_home" mnemonicParsing="false" onAction="#BtnHome" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الصفحه الرئيسيه" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_pos" mnemonicParsing="false" onAction="#BtnPos" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="نقطه البيع" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_users" mnemonicParsing="false" onAction="#BtnUsers" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="المستخدمين" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_tables" mnemonicParsing="false" onAction="#BtnTables" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الطاولات" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_dep" mnemonicParsing="false" onAction="#BtnDepartments" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الاقسام" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_products" mnemonicParsing="false" onAction="#BtnProducts" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="المنتجات" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_reports" mnemonicParsing="false" onAction="#BtnReports" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="التقارير" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_orders" mnemonicParsing="false" onAction="#BtnSettings" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الاعدادات" textAlignment="CENTER" textFill="WHITE" />
+            </items>
+        </ToolBar>
+    </right>
+
+    <top>
+        <ToolBar nodeOrientation="RIGHT_TO_LEFT" orientation="HORIZONTAL" style="-fx-background-color: #52d97f;" BorderPane.alignment="CENTER">
+            <ImageView fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/cafelogo.png" />
+            </ImageView>
+
+
+            <Text fill="WHITE" text="Cafe Zone" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Text>
+        </ToolBar>
+    </top>
+
+    <center>
+        <BorderPane fx:id="container_pane">
+            <top>
+                <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+                    <items>
+                        <Button id="btns" mnemonicParsing="false" onAction="#BtnAddUser" prefHeight="32.0" prefWidth="136.0" style="-fx-background-color: #40ad65;" stylesheets="@../css/stylesheet.css" text=" اضافه مستخدم +" textFill="WHITE">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </items>
+                </ToolBar>
+            </top>
+            <right>
+                <VBox alignment="CENTER" prefHeight="420.0" prefWidth="293.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/user.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="txt_perm" text="المستخدم" />
+                        <Label fx:id="l_user" text="username" visible="false">
+                            <font>
+                                <Font name="System Bold" size="25.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="l_pass" text="password" visible="false" />
+                        <Button id="btns" fx:id="btn_del" mnemonicParsing="false" onAction="#BtnDel" prefHeight="32.0" prefWidth="85.0" style="-fx-background-color: #d11b0a; -fx-border-color: #fff; -fx-border-radius: 5;" stylesheets="@../css/stylesheet.css" text="حذف" textFill="WHITE" visible="false">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Button>
+                        <VBox fx:id="user_box" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" visible="false">
+                            <children>
+                                <Label text="صلاحيات المستخدم" visible="false">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <ComboBox fx:id="combo_perm" nodeOrientation="RIGHT_TO_LEFT" prefWidth="150.0" promptText="اختر" visible="false" />
+                                <TextField fx:id="txt_user" promptText="username">
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="txt_pass" promptText="password">
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <Button id="btns" fx:id="btn_save" mnemonicParsing="false" onAction="#BtnSave" prefHeight="32.0" prefWidth="85.0" style="-fx-background-color: #06c930; -fx-border-color: #fff; -fx-border-radius: 5;" stylesheets="@../css/stylesheet.css" text="حفظ" textFill="WHITE">
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin>
+                                </Button>
+                                <Label fx:id="txt_state" textFill="#ff0101" />
+                            </children>
+                        </VBox>
+                    </children>
+                    <BorderPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </BorderPane.margin>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </right>
+            <left>
+                <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label contentDisplay="CENTER" text="المستخدمين" textAlignment="RIGHT">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <ListView fx:id="list_users">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </VBox.margin>
+                        </ListView>
+                    </children>
+                </VBox>
+            </left>
+        </BorderPane>
+    </center>
+
+</BorderPane>

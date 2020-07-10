@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import utils.NumberTextField?>
+<?import javafx.scene.control.CheckBox?>
+<BorderPane prefHeight="585.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PosController">
+
+    <right>
+        <ToolBar nodeOrientation="RIGHT_TO_LEFT" orientation="VERTICAL" style="-fx-background-color: #52d97f;" BorderPane.alignment="CENTER">
+            <items>
+                <Button fx:id="btn_home" mnemonicParsing="false" onAction="#BtnHome" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الصفحه الرئيسيه" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_pos" mnemonicParsing="false" onAction="#BtnPos" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="نقطه البيع" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_users" mnemonicParsing="false" onAction="#BtnUsers" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="المستخدمين" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_tables" mnemonicParsing="false" onAction="#BtnTables" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الطاولات" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_dep" mnemonicParsing="false" onAction="#BtnDepartments" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الاقسام" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_products" mnemonicParsing="false" onAction="#BtnProducts" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="المنتجات" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_reports" mnemonicParsing="false" onAction="#BtnReports" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="التقارير" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_orders" mnemonicParsing="false" onAction="#BtnSettings" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الاعدادات" textAlignment="CENTER" textFill="WHITE" />
+            </items>
+        </ToolBar>
+    </right>
+
+    <top>
+        <ToolBar nodeOrientation="RIGHT_TO_LEFT" orientation="HORIZONTAL" style="-fx-background-color: #52d97f;" BorderPane.alignment="CENTER">
+            <ImageView fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/cafelogo.png" />
+            </ImageView>
+
+
+            <Text fill="WHITE" text="Cafe Zone" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Text>
+        </ToolBar>
+    </top>
+
+    <center>
+        <BorderPane fx:id="container_pane" nodeOrientation="RIGHT_TO_LEFT" BorderPane.alignment="CENTER">
+            <center>
+                
+            </center>
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+         <center>
+             <ScrollPane fx:id="scroll" fitToWidth="true" BorderPane.alignment="CENTER">
+                 <content>
+                     <GridPane id="pane" fx:id="grid" alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" stylesheets="@../css/gridstyle.css">
+                         <padding>
+                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                         </padding></GridPane>
+                 </content>
+                 <BorderPane.margin>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                 </BorderPane.margin>
+             </ScrollPane>
+         </center>
+         <top>
+            <VBox prefHeight="175.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ListView fx:id="list_dep" nodeOrientation="RIGHT_TO_LEFT" orientation="HORIZONTAL" prefHeight="175.0" stylesheets="@../css/stylesheet.css">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ListView>
+               </children>
+            </VBox>
+         </top>
+        </BorderPane>
+    </center>
+   <left>
+      <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+         <children>
+
+             <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0">
+                 <children>
+                     <CheckBox fx:id="check_table" text="حجز طاوله">
+                         <HBox.margin>
+                             <Insets left="10.0" right="10.0" top="10.0" />
+                         </HBox.margin>
+                     </CheckBox>
+                 </children>
+             </HBox>
+
+             <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0">
+               <children>
+                  <Button fx:id="btn_new_bill1" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#BtnSaveBill" prefHeight="35.0" prefWidth="93.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="حفظ الفاتوره" textAlignment="CENTER" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btn_new_bill11" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#BtnCancelBill" prefHeight="35.0" prefWidth="50.0" style="-fx-background-color: #9c0303; -fx-border-radius: 2;" text="الغاء" textAlignment="CENTER" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+
+            <TableView fx:id="table" nodeOrientation="RIGHT_TO_LEFT" prefWidth="248.0">
+               <columns>
+                  <TableColumn fx:id="name" prefWidth="75.0" text="اسم الصنف" />
+                  <TableColumn fx:id="price" prefWidth="75.0" text="السعر" />
+                  <TableColumn fx:id="amount" prefWidth="75.0" text="العدد" />
+               </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TableView>
+            <VBox alignment="TOP_RIGHT" prefHeight="211.0" prefWidth="268.0" spacing="5.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Label text="\%">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <NumberTextField fx:id="txt_tax_bill" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="80.0" text="0" />
+                        <Label text="فاتوره ضريبيه" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Label text="\%">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <NumberTextField fx:id="txt_service" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="80.0" text="14">
+                           <HBox.margin>
+                              <Insets right="12.0" />
+                           </HBox.margin>
+                        </NumberTextField>
+                        <Label text="تكلفه خدمه" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Label text="\%">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <NumberTextField fx:id="txt_discount" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="80.0" text="0">
+                           <HBox.margin>
+                              <Insets right="7.0" />
+                           </HBox.margin>
+                        </NumberTextField>
+                        <Label text="نسبه الخصم" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="btn_home1" mnemonicParsing="false" onAction="#BtnCalc" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="احسب" textAlignment="CENTER" textFill="WHITE" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="268.0">
+                     <children>
+                        <Label fx:id="total_price" text="0">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label text="اجمالي السعر :   ">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="bill_num" text="0">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label text="رقم الفاتوره :   ">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="10.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+
+</BorderPane>

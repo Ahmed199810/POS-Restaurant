@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<?import utils.NumberTextField?>
+<AnchorPane prefHeight="163.0" prefWidth="275.0" style="-fx-background-color: #52d97f; -fx-border-radius: 5; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ItemTableController">
+   <children>
+      <Button fx:id="btn_edit" layoutX="14.0" layoutY="124.0" mnemonicParsing="false" onAction="#BtnEdit" text="تعديل" />
+      <Button fx:id="btn_reserve" layoutX="66.0" layoutY="124.0" mnemonicParsing="false" onAction="#BtnReserve" text="حجز" />
+      <Button fx:id="btn_view" layoutX="120.0" layoutY="124.0" mnemonicParsing="false" onAction="#BtnView" text="عرض" />
+      <Button fx:id="btn_inc" layoutX="210.0" layoutY="124.0" mnemonicParsing="false" onAction="#BtnAdd" text="+" />
+      <Button fx:id="btn_dec" layoutX="240.0" layoutY="124.0" mnemonicParsing="false" onAction="#BtnDel" prefHeight="25.0" prefWidth="25.0" text="-" />
+      <ImageView fitHeight="100" fitWidth="100" layoutX="88.0" layoutY="18.0">
+         <Image url="@../images/table.png" />
+      </ImageView>
+      <Label fx:id="txt_num" layoutX="129.0" layoutY="58.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="100.0" layoutY="36.0" text="عدد الكراسي" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="txt_id" layoutX="14.0" layoutY="14.0" text="1" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_home" layoutX="210.0" layoutY="6.0" mnemonicParsing="false" onAction="#BtnDelTable" prefHeight="27.0" prefWidth="59.0" style="-fx-background-color: #c7081e; -fx-border-radius: 2;" text="مسح" textAlignment="CENTER" textFill="WHITE" />
+      <NumberTextField fx:id="txt_price" alignment="CENTER_RIGHT" layoutX="189.0" layoutY="87.0" prefHeight="25.0" prefWidth="75.0" promptText="التكلفه" />
+      <NumberTextField fx:id="txt_bill_num" layoutX="12.0" layoutY="87.0" prefHeight="25.0" prefWidth="75.0" promptText="رقم الفاتوره" />
+      <Label layoutX="24.0" layoutY="67.0" text="رقم الفاتوره">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="212.0" layoutY="67.0" text="التكلفه">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

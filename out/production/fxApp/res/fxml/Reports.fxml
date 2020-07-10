@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="602.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReportsController">
+
+    <right>
+        <ToolBar nodeOrientation="RIGHT_TO_LEFT" orientation="VERTICAL" style="-fx-background-color: #52d97f;" BorderPane.alignment="CENTER">
+            <items>
+                <Button fx:id="btn_home" mnemonicParsing="false" onAction="#BtnHome" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الصفحه الرئيسيه" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_pos" mnemonicParsing="false" onAction="#BtnPos" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="نقطه البيع" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_users" mnemonicParsing="false" onAction="#BtnUsers" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="المستخدمين" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_tables" mnemonicParsing="false" onAction="#BtnTables" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الطاولات" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_dep" mnemonicParsing="false" onAction="#BtnDepartments" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الاقسام" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_products" mnemonicParsing="false" onAction="#BtnProducts" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="المنتجات" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_reports" mnemonicParsing="false" onAction="#BtnReports" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="التقارير" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_orders" mnemonicParsing="false" onAction="#BtnSettings" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الاعدادات" textAlignment="CENTER" textFill="WHITE" />
+            </items>
+        </ToolBar>
+    </right>
+
+    <top>
+        <ToolBar nodeOrientation="RIGHT_TO_LEFT" orientation="HORIZONTAL" style="-fx-background-color: #52d97f;" BorderPane.alignment="CENTER">
+            <ImageView fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/cafelogo.png" />
+            </ImageView>
+
+
+            <Text fill="WHITE" text="Cafe Zone" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Text>
+        </ToolBar>
+    </top>
+
+    <center>
+        <BorderPane fx:id="container_pane">
+         <center>
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="345.0">
+                     <children>
+                        <Button fx:id="btn_search" mnemonicParsing="false" onAction="#BtnSearch" prefHeight="35.0" prefWidth="49.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="بحث" textAlignment="CENTER" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="txt_search" alignment="CENTER_RIGHT" promptText="ابحث برقم الفاتوره">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Separator orientation="VERTICAL" prefHeight="200.0">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Separator>
+                        <DatePicker fx:id="end_date" />
+                         <Label text="الي">
+                             <font>
+                                 <Font name="System Bold" size="12.0" />
+                             </font>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                         </Label>
+                        <DatePicker fx:id="start_date" />
+                        <Label text="من">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Button fx:id="btn_view_reports" mnemonicParsing="false" onAction="#BtnViewReports" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="عرض التقارير" textAlignment="CENTER" textFill="WHITE" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Button fx:id="btn_view_reports1" mnemonicParsing="false" onAction="#BtnTodayReports" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="تقارير اليوم" textAlignment="CENTER" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <TableView fx:id="table" nodeOrientation="RIGHT_TO_LEFT">
+                     <columns>
+                        <TableColumn fx:id="bill_num" prefWidth="85.0" text="رقم الفاتوره" />
+                        <TableColumn fx:id="price" prefWidth="99.0" text="سعر الفاتوره" />
+                        <TableColumn fx:id="products" prefWidth="133.0" text="المشتريات" />
+                        <TableColumn fx:id="discount" prefWidth="75.0" text="نسبه الخصم" />
+                        <TableColumn fx:id="bill_tax" prefWidth="75.0" text="فاتوره ضريبيه" />
+                        <TableColumn fx:id="service" prefWidth="75.0" text="تكلفه خدمه" />
+                        <TableColumn fx:id="date_time" prefWidth="174.0" text="التاريخ" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="609.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="كل المبيعات">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="total_sells" text="0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Button fx:id="btn_print_report" mnemonicParsing="false" onAction="#BtnPrintReport" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="طباعه التقرير" textAlignment="CENTER" textFill="WHITE" />
+               </children>
+               <BorderPane.margin>
+                  <Insets right="10.0" />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+        </BorderPane>
+    </center>
+
+</BorderPane>

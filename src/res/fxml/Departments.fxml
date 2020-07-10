@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="522.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DepartmentsController">
+
+    <right>
+        <ToolBar nodeOrientation="RIGHT_TO_LEFT" orientation="VERTICAL" style="-fx-background-color: #52d97f;" BorderPane.alignment="CENTER">
+            <items>
+                <Button fx:id="btn_home" mnemonicParsing="false" onAction="#BtnHome" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الصفحه الرئيسيه" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_pos" mnemonicParsing="false" onAction="#BtnPos" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="نقطه البيع" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_users" mnemonicParsing="false" onAction="#BtnUsers" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="المستخدمين" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_tables" mnemonicParsing="false" onAction="#BtnTables" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الطاولات" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_dep" mnemonicParsing="false" onAction="#BtnDepartments" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الاقسام" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_products" mnemonicParsing="false" onAction="#BtnProducts" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="المنتجات" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_reports" mnemonicParsing="false" onAction="#BtnReports" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="التقارير" textAlignment="CENTER" textFill="WHITE" />
+                <Button fx:id="btn_orders" mnemonicParsing="false" onAction="#BtnSettings" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="الاعدادات" textAlignment="CENTER" textFill="WHITE" />
+            </items>
+        </ToolBar>
+    </right>
+
+    <top>
+        <ToolBar nodeOrientation="RIGHT_TO_LEFT" orientation="HORIZONTAL" style="-fx-background-color: #52d97f;" BorderPane.alignment="CENTER">
+            <ImageView fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/cafelogo.png" />
+            </ImageView>
+
+
+            <Text fill="WHITE" text="Cafe Zone" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Text>
+        </ToolBar>
+    </top>
+
+    <center>
+        <BorderPane fx:id="container_pane">
+            <top>
+                <HBox alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="365.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button fx:id="btn_add" mnemonicParsing="false" onAction="#BtnAdd" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" text="اضافه قسم +" textAlignment="CENTER" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets right="10.0" top="10.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                    <BorderPane.margin>
+                        <Insets bottom="10.0" />
+                    </BorderPane.margin>
+                </HBox>
+            </top>
+         <center>
+            <ListView fx:id="list_dep" nodeOrientation="RIGHT_TO_LEFT" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/stylesheet.css" BorderPane.alignment="CENTER" />
+         </center>
+
+
+        </BorderPane>
+    </center>
+
+</BorderPane>

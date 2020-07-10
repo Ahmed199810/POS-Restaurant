@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="464.0" prefWidth="656.0" style="-fx-background-color: #52d97f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+   <center>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/cafelogo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="636.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/user.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <TextField fx:id="txt_user" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="300.0" promptText="اسم المستخدم">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets right="40.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="39.0" prefWidth="636.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/keys.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <PasswordField fx:id="txt_pass" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="300.0" promptText="كلمه المرور">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></PasswordField>
+               </children>
+               <VBox.margin>
+                  <Insets right="40.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox alignment="TOP_CENTER" prefHeight="44.0" prefWidth="656.0" />
+            <Label fx:id="login_msg" textFill="#b51d1d" />
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="656.0">
+               <children>
+                  <Button id="btns" mnemonicParsing="false" onAction="#BtnLogin" prefHeight="35.0" prefWidth="116.0" style="-fx-background-color: #40ad65; -fx-border-radius: 2;" stylesheets="@../css/stylesheet.css" text="تسجيل الدخول" textFill="WHITE">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

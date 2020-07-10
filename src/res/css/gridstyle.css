@@ -1,0 +1,14 @@
+#pane{
+    -fx-background-color: #fff;
+}
+#pane >*{
+    -fx-background-color: #f5f0f0;
+    -fx-background-radius: 2px;
+    -fx-padding: 1px,2px,3px,2px;
+    -fx-text-fill: #000;
+}
+#pane > *:hover {
+    -fx-background-color: #64bbde;
+    -fx-background-radius: 2px;
+    -fx-text-fill: #fff;
+}
